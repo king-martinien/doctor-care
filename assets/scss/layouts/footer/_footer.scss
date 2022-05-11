@@ -1,0 +1,36 @@
+.footer {
+  padding: 60px 0;
+  background-color: $brand-green;
+
+  .footer-container {
+    gap: 32px;
+
+    .footer-infos {
+
+      .logo-white {
+        margin-bottom: 24px;
+      }
+
+      p {
+        color: $brand-beige;
+
+        &.copyright {
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    .footer-socials {
+      gap: 32px;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    .footer-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+}

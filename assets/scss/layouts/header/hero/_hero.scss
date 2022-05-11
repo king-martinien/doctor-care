@@ -1,0 +1,86 @@
+.header-hero {
+
+  &.active {
+    padding-top: 72px;
+  }
+
+  &-container {
+    //border: 2px solid red;
+    gap: 60px;
+    padding-top: 40px;
+
+    @media screen and (min-width: $breakpoint-md) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 50px;
+      padding-top: 0;
+    }
+  }
+
+  .hero-intro {
+    text-align: center;
+
+    &__subtitle {
+      color: $brand-green;
+      font-size: $fs-14;
+      margin-bottom: 16px;
+    }
+
+    &__title {
+      font-size: $fs-34;
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      color: $gray-paragraph;
+      font-size: $fs-18;
+      margin-bottom: 32px;
+    }
+
+
+    @media screen and (min-width: $breakpoint-md) {
+      max-width: 600px;
+      text-align: left;
+      margin-top: 80px;
+
+      &__title {
+        font-size: $fs-52;
+      }
+
+      .btn {
+        font-size: $fs-14;
+        padding: 14px 24px;
+      }
+    }
+
+  }
+
+  .hero-img {
+    .desktop-image {
+      display: none;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+
+      .desktop-image {
+        display: block;
+      }
+
+      .mobile-image {
+        display: none;
+      }
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+
+    .hero-intro {
+      max-width: 500px;
+
+      &__title {
+        font-size: $fs-24;
+      ;
+      }
+    }
+  }
+}

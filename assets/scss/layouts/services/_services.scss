@@ -1,0 +1,61 @@
+.services {
+  padding: 100px 0;
+
+
+  .services-heading {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .service-subtitle {
+      color: $brand-green;
+      font-size: $fs-14;
+      margin-bottom: 16px;
+    }
+
+    .services-title {
+      font-size: $fs-30;
+      max-width: 314px;
+      margin: 0 auto;
+    }
+  }
+
+  .services-content {
+    gap: 32px;
+
+    .service {
+      padding: 24px;
+      border: 1px solid $brand-green-light;
+      border-radius: 6px;
+      background-color: $white;
+      gap: 16px;
+
+      .service-title {
+        font-size: $fs-24;
+      }
+    }
+  }
+
+
+  @media screen and (min-width: 540px) {
+
+    .services-content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+
+    .services-heading {
+      .services-title {
+        font-size: $fs-40;
+        max-width: 550px;
+      }
+    }
+
+    .services-content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+}

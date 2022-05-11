@@ -1,0 +1,180 @@
+.header {
+  background-color: $brand-green-light;
+  height: 1080px;
+
+  @media screen and (min-width: $breakpoint-md) {
+    height: 678px;
+  }
+}
+
+.header-navigation {
+  height: 72px;
+  position: relative;
+  transition: 0.2s ease;
+
+  &.active {
+
+    .logo {
+      position: relative;
+      z-index: 25;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
+    .hamburger-btn .hamburger-btn__line {
+      background-color: $white;
+      z-index: 25;
+    }
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: $brand-green;
+
+    .logo svg path {
+      fill: $white;
+    }
+
+    .hamburger-btn .hamburger-btn__line {
+      background-color: $white;
+    }
+
+    .navbar-desktop {
+      color: $white;
+    }
+
+    .navbar-desktop-btn {
+      color: $white;
+      border: 1px solid $white;
+
+      &:hover {
+        color: $brand-green;
+        border: 1px solid $brand-green;
+        background-color: $white;
+      }
+    }
+  }
+
+  .hamburger-btn {
+    width: 40px;
+    height: 40px;
+    padding: 8px 6px;
+    position: relative;
+    z-index: 25;
+
+    &.btn-active {
+
+      .hamburger-btn__line {
+        visibility: hidden;
+
+        &::after, &::before {
+          visibility: visible;
+          width: 100%;
+        }
+
+        &::before {
+          transform: translateY(0) rotate(-45deg);
+        }
+
+        &::after {
+          transform: translateY(0) rotate(45deg);
+        }
+      }
+    }
+
+    .hamburger-btn__line {
+      width: 100%;
+      height: 3px;
+      border-radius: 40px;
+      background-color: $brand-green;
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        background-color: inherit;
+        height: 3px;
+        width: 100%;
+        right: 0;
+        border-radius: inherit;
+        transition: transform 0.5s ease;
+      }
+
+      &::before {
+        transform: translateY(-0.5em) rotate(0);
+      }
+
+      &::after {
+        transform: translateY(0.5em) rotate(0);
+        width: 65%;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      display: none;
+    }
+
+  }
+
+  .navigation-container {
+    gap: 10px;
+  }
+
+  .navbar-desktop {
+    display: none;
+    color: $brand-green;
+
+    &__list {
+      gap: 32px;
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      display: flex;
+    }
+  }
+
+  .navbar-desktop-btn {
+    display: none;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      display: block;
+    }
+  }
+
+  .navbar-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $brand-green;
+    color: $white;
+    text-align: center;
+    font-size: $fs-24;
+    font-weight: $fw-bold;
+    gap: 80px;
+    padding-top: 132px;
+    transform: translateX(-100%);
+    transform-origin: left center;
+    transition: transform 0.2s ease;
+    z-index: 20;
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    .navbar-mobile__list {
+      gap: 48px;
+    }
+
+    .navbar-mobile__icons {
+      gap: 32px;
+    }
+  }
+}

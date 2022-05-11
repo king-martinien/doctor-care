@@ -1,0 +1,53 @@
+.contact {
+  padding: 100px 0;
+
+  .contact-container {
+    gap: 60px;
+  }
+
+  .contact-infos {
+
+    .contact-title {
+      font-size: $fs-30;
+      margin-bottom: 32px;
+      max-width: 300px;
+    }
+
+    .location, .mail {
+      gap: 8px;
+    }
+
+    .location {
+      margin-bottom: 16px;
+    }
+
+    .mail {
+      margin-bottom: 32px;
+    }
+  }
+
+  .contact-img {
+    border-radius: 5px;
+  }
+
+  @media screen and (min-width: 920px) {
+    padding: 160px 0;
+
+    .contact-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .contact-infos {
+      width: 45%;
+      margin-top: 38px;
+    }
+
+    .contact-img {
+      width: 55%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+}
